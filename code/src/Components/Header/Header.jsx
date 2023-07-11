@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 
 import "./Header.css";
 
@@ -17,7 +17,7 @@ function Header() {
     appId: "1:229406200800:web:a8166cfa52ae5b5714d185",
   };
 
-  const app = initializeApp(firebaseConfig);
+  // const app = initializeApp(firebaseConfig);
 
   const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ function Header() {
       <FaHome onClick={() => navigate("/")} className="home-icon" />
       <div className="categories-container">
         {categories.map((item) => (
-          <Link to={`/category/${item}`} className="nav-link">
+          <Link key={item} to={`/category/${item}`} className="nav-link">
             {item}
           </Link>
         ))}
