@@ -1,5 +1,9 @@
-import React, { useState } from "react";.
+import React, { useState } from "react";
 import { ref, uploadBytes, getDownloadURL  } from "firebase/storage";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { storage, db, auth } from '../../config/firebaseConfig'
+import { v4 } from 'uuid'
+
 import "./AddArticle.css";
 
 const AddArticle = () => {
@@ -15,8 +19,23 @@ const AddArticle = () => {
     image: "",
   });
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    
+    //creating a reference for the image
+    const imageRef = ref(storage, `images/${formData.image.name + v4()}`);
+
+    //upload the image to the bucket
+    uploadBytes(imageRef, formData.image).then(res => {
+      // console.log(res.ref);
+      getDownloadURL(res.ref).then(url => {
+        console.log("this is the url", url)
+      });
+    }).catch(err=> console.log(err))
+  }
+
   return (
-    <form className="add-article-form">
+    <form className="add-article-form" onSubmit={handleSubmit}>
       <h2>Create Article</h2>
       <div className="input-group">
         <label htmlFor="title">Title</label>
