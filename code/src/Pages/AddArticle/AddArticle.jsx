@@ -28,10 +28,10 @@ const AddArticle = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     //creating a reference for the image
     const imageRef = ref(storage, `images/${formData.image.name + v4()}`);
-  
+
     //upload the image to the bucket
     uploadBytes(imageRef, formData.image)
       .then((res) => {
@@ -51,7 +51,7 @@ const AddArticle = () => {
           imageUrl: url,
           createdBy: user.displayName,
           userId: user.uid,
-          createdAt: Timestamp.now().toDate()
+          createdAt: Timestamp.now().toDate(),
         });
       })
       .then(() => {
@@ -60,7 +60,7 @@ const AddArticle = () => {
           type: "success",
           autoClose: 2000,
         });
-  
+
         setTimeout(() => {
           navigate("/");
         }, 2000);
@@ -109,7 +109,6 @@ const AddArticle = () => {
       <div className="input-group">
         <label htmlFor="paragraphTwo">Paragraph Two</label>
         <textarea
-          required
           id="paragraphTwo"
           placeholder="Maximum 650 characters"
           maxLength="650"
@@ -121,7 +120,6 @@ const AddArticle = () => {
       <div className="input-group">
         <label htmlFor="paragraphThree">Paragraph Three</label>
         <textarea
-          required
           id="paragraphThree"
           placeholder="Maximum 650 characters"
           maxLength="650"
