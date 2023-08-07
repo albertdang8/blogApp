@@ -3,6 +3,7 @@ import { doc, getDoc } from 'firebase/firestore'
 import { useParams } from "react-router-dom";
 import { db } from '../../config/firebaseConfig';
 import Likes from "../../Components/Likes/Likes";
+import Comments from "../../Components/Comments/Comments";
 
 import "./ArticleDetails.css";
 
@@ -39,7 +40,7 @@ const ArticleDetails = () => {
         <p className="article-description">{article?.paragraphTwo}</p>
         <p className="article-description">{article?.paragraphThree}</p>
       </div>
-      {/* <Comments articleId = {articleId}/> */}
+      <Comments articleId = {articleId}/>
     </div>
   );
 };
