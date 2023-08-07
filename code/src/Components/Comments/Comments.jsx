@@ -8,6 +8,7 @@ import {
   where,
   query,
   deleteDoc,
+  doc
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
