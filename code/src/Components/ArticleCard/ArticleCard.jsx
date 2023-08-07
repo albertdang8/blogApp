@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ArticleCard.css'
 
 function ArticleCard({article}) {
@@ -7,7 +8,7 @@ function ArticleCard({article}) {
       <img src={article?.imageUrl} alt="" />
       <div className="article-card-info">
         <p>{article?.title}</p>
-        <p>Read</p>
+        <Link to={`/article/${article?.id}`}>Read</Link>
       </div>
     </div>
   )
