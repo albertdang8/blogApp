@@ -6,7 +6,6 @@ import { db } from "../../config/firebaseConfig";
 import "./Banner.css";
 
 const Banner = () => {
-
   const [mainArticle, setMainArticle] = useState({});
   const [otherArticles, setOtherArticles] = useState([]);
   const navigate = useNavigate();
@@ -31,7 +30,7 @@ const Banner = () => {
       <div
         className="main-article-container"
         key={mainArticle?.id}
-        onClick={()=>navigate(`/article/${mainArticle?.id}`)}
+        onClick={() => navigate(`/article/${mainArticle?.id}`)}
         style={{ backgroundImage: `url(${mainArticle?.imageUrl})` }}
       >
         <div className="banner-info">
@@ -44,7 +43,7 @@ const Banner = () => {
           <div
             className="other-article-item"
             key={item?.id}
-            onClick={()=>navigate(`/article/${item?.id}`)}
+            onClick={() => navigate(`/article/${item?.id}`)}
             style={{ backgroundImage: `url(${item?.imageUrl})` }}
           >
             <div className="banner-info">
@@ -56,7 +55,6 @@ const Banner = () => {
       </div>
     </div>
   );
-
 };
 
 export default Banner;

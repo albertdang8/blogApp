@@ -40,12 +40,14 @@ const Likes = ({ articleId }) => {
     }
   }, [user]);
 
-  useEffect(()=> {
+  useEffect(() => {
     //  find like count
     //  make a query to count likes
-    const q2 = query(likesRef, where("articleId", "==", articleId))
-    getDocs(q2, likesRef).then(res => setLikeCount(res.size)).catch(err => console.log(err));
-  }, [isLiked])
+    const q2 = query(likesRef, where("articleId", "==", articleId));
+    getDocs(q2, likesRef)
+      .then((res) => setLikeCount(res.size))
+      .catch((err) => console.log(err));
+  }, [isLiked]);
 
   const handleLike = () => {
     if (user) {

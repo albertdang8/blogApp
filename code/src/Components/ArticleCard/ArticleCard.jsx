@@ -1,17 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './ArticleCard.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./ArticleCard.css";
 
-function ArticleCard({article}) {
+function ArticleCard({ article }) {
   return (
-    <div className="artivle-card">
+    <div className="article-card">
       <img src={article?.imageUrl} alt="" />
       <div className="article-card-info">
         <p>{article?.title}</p>
         <Link to={`/article/${article?.id}`}>Read</Link>
       </div>
     </div>
-  )
+  );
 }
 
-export default ArticleCard
+export default ArticleCard;
