@@ -40,7 +40,9 @@
 }
 
 @media (max-width: 768px) {
-    .auth-link, .nav-link {
+
+    .auth-link,
+    .nav-link {
         font-size: 10px;
         padding: 4px;
     }

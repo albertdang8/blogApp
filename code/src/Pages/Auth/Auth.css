@@ -46,3 +46,14 @@
     cursor: pointer;
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+    .auth-form {
+        width: 80%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
