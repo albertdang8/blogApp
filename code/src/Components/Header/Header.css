@@ -38,3 +38,19 @@
     color: var(--white);
     margin-right: 10px;
 }
+
+@media (max-width: 768px) {
+    .auth-link, .nav-link {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .username {
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .home-icon {
+        height: 35%;
+    }
+}
